@@ -1,0 +1,35 @@
+{
+  "case_id": "CASE-001",
+  "account": "peggy",
+  "source_ip": "62.171.190.44",
+  "detections": [
+    "BRUTE_FORCE",
+    "SUSPICIOUS_SOURCE_IP"
+  ],
+  "mitre": [
+    "T1090",
+    "T1110"
+  ],
+  "risk_score": 4,
+  "severity": "MODERATE",
+  "verdict": "UNDER_REVIEW",
+  "timeline": [
+    {
+      "time": "2026-11-03T10:00:00+00:00",
+      "event": "Brute force attempt (6 failures)",
+      "host": "FILE-03"
+    }
+  ],
+  "iocs": {
+    "accounts": [
+      "peggy"
+    ],
+    "ips": [
+      "62.171.190.44"
+    ],
+    "hosts": [
+      "FILE-03"
+    ]
+  },
+  "servicenow_sys_id": "079bf37dc3270310022c770d050131d9"
+}

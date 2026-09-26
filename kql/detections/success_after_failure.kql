@@ -1,0 +1,12 @@
+let window = 30m;
+let fails = SecurityEvents
+    | where EventID == "4625"
+    | project FailTime = TimeGenerated, Account, IPAddress;
+let successes = SecurityEvents
+    | where EventID == "4624"
+    | project SuccessTime = TimeGenerated, Account, IPAddress, Computer, Activity;
+fails
+| join kind=inner successes on Account, IPAddress
+| where SuccessTime > FailTime and SuccessTime - FailTime <= window
+| summarize FailsBefore = count(), FirstFail = min(FailTime), SuccessAt = max(SuccessTime), Hosts = make_set(Computer), Activities = make_set(Activity)
+    by Account, IPAddress

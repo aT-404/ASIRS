@@ -1,0 +1,43 @@
+{
+  "case_id": "CASE-005",
+  "account": "oscar",
+  "source_ip": "103.21.244.10",
+  "detections": [
+    "SUSPICIOUS_SOURCE_IP"
+  ],
+  "mitre": [
+    "T1090"
+  ],
+  "risk_score": 2,
+  "severity": "LOW",
+  "verdict": "UNDER_REVIEW",
+  "timeline": [
+    {
+      "time": "2026-11-02T09:02:00+00:00",
+      "event": "Failed network logon",
+      "host": "APP-03"
+    },
+    {
+      "time": "2026-11-02T09:03:00+00:00",
+      "event": "Failed network logon",
+      "host": "APP-03"
+    },
+    {
+      "time": "2026-11-02T09:04:00+00:00",
+      "event": "Failed network logon",
+      "host": "APP-03"
+    }
+  ],
+  "iocs": {
+    "accounts": [
+      "oscar"
+    ],
+    "ips": [
+      "103.21.244.10"
+    ],
+    "hosts": [
+      "APP-03"
+    ]
+  },
+  "servicenow_sys_id": "83ff98c2c36b0310022c770d05013144"
+}

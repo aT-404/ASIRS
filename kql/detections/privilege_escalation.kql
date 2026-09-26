@@ -1,0 +1,3 @@
+SecurityEvents
+| where EventID == "4728"
+| project TimeGenerated, Account, TargetAccount, MemberName, IPAddress, Computer

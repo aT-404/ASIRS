@@ -1,0 +1,3 @@
+SecurityEvents
+| summarize Events = count() by EventID, Activity
+| order by Events desc

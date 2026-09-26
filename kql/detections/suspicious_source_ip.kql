@@ -1,0 +1,3 @@
+SecurityEvents
+| where isnotempty(IPAddress) and not(ipv4_is_private(IPAddress))
+| project TimeGenerated, Account, IPAddress, Computer, Activity

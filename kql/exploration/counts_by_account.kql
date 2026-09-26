@@ -1,0 +1,3 @@
+SecurityEvents
+| summarize Events = count() by Account
+| order by Events desc

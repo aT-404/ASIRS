@@ -1,0 +1,3 @@
+SecurityEvents
+| where isnotempty(IPAddress) and not(ipv4_is_private(IPAddress))
+| summarize Events = count(), Accounts = make_set(Account) by IPAddress

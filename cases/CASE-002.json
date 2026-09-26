@@ -1,0 +1,35 @@
+{
+  "case_id": "CASE-002",
+  "account": "sybil",
+  "source_ip": "188.42.11.9",
+  "detections": [
+    "BRUTE_FORCE",
+    "SUSPICIOUS_SOURCE_IP"
+  ],
+  "mitre": [
+    "T1090",
+    "T1110"
+  ],
+  "risk_score": 4,
+  "severity": "MODERATE",
+  "verdict": "UNDER_REVIEW",
+  "timeline": [
+    {
+      "time": "2026-11-05T09:10:00+00:00",
+      "event": "Brute force attempt (6 failures)",
+      "host": "APP-03"
+    }
+  ],
+  "iocs": {
+    "accounts": [
+      "sybil"
+    ],
+    "ips": [
+      "188.42.11.9"
+    ],
+    "hosts": [
+      "APP-03"
+    ]
+  },
+  "servicenow_sys_id": "fd5dbb31c3670310022c770d05013153"
+}

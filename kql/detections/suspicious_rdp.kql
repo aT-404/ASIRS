@@ -1,0 +1,4 @@
+SecurityEvents
+| where EventID == "4624" and LogonType == "10"
+| where isnotempty(IPAddress) and not(ipv4_is_private(IPAddress))
+| project TimeGenerated, Account, IPAddress, Computer, Activity

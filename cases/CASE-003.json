@@ -1,0 +1,49 @@
+{
+  "case_id": "CASE-003",
+  "account": "trent",
+  "source_ip": "103.21.244.10",
+  "detections": [
+    "BRUTE_FORCE",
+    "SUCCESS_AFTER_FAILURE",
+    "SUSPICIOUS_RDP",
+    "SUSPICIOUS_SOURCE_IP"
+  ],
+  "mitre": [
+    "T1021.001",
+    "T1078",
+    "T1090",
+    "T1110"
+  ],
+  "risk_score": 9,
+  "severity": "HIGH",
+  "verdict": "TRUE_POSITIVE",
+  "timeline": [
+    {
+      "time": "2026-11-02T09:00:00+00:00",
+      "event": "Brute force attempt (6 failures)",
+      "host": "WS-201"
+    },
+    {
+      "time": "2026-11-02T09:07:00+00:00",
+      "event": "Successful RDP logon after repeated failures",
+      "host": "WS-201"
+    },
+    {
+      "time": "2026-11-02T09:09:00+00:00",
+      "event": "RDP session established",
+      "host": "WS-201"
+    }
+  ],
+  "iocs": {
+    "accounts": [
+      "trent"
+    ],
+    "ips": [
+      "103.21.244.10"
+    ],
+    "hosts": [
+      "WS-201"
+    ]
+  },
+  "servicenow_sys_id": "665dbb31c3670310022c770d050131d3"
+}

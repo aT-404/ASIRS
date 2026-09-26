@@ -1,0 +1,8 @@
+azure-kusto-data
+requests
+pyyaml
+pandas
+streamlit
+pytest
+python-dotenv
+reportlab

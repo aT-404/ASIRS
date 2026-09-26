@@ -1,0 +1,18 @@
+correlation_window_minutes: 60
+
+weights:
+  failed_auth: 2
+  successful_auth: 3
+  suspicious_ip: 2
+  rdp: 2
+  privilege_escalation: 4
+  sensitive_asset: 3
+
+sensitive_assets:
+  - DC-01
+
+severity_bands:
+  LOW: [0, 3]
+  MODERATE: [4, 6]
+  HIGH: [7, 10]
+  CRITICAL: [11, 999]

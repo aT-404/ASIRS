@@ -1,0 +1,15 @@
+let window = 15m;
+let fails = SecurityEvents
+    | where EventID == "4625"
+    | project Time1 = TimeGenerated, Account, IPAddress, Computer;
+let fails2 = SecurityEvents
+    | where EventID == "4625"
+    | project Time2 = TimeGenerated, Account, IPAddress;
+fails
+| join kind=inner fails2 on Account, IPAddress
+| where Time1 >= Time2 and Time1 - Time2 <= window
+| summarize FailCount = count(), FirstFail = min(Time2), LastFail = max(Time1), Hosts = make_set(Computer)
+    by Account, IPAddress, Time1
+| where FailCount >= 5
+| summarize FailCount = max(FailCount), FirstFail = min(FirstFail), LastFail = max(LastFail), Hosts = make_set_pv(Hosts)
+    by Account, IPAddress
